@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1= "Ask a Question"
+    form#formAskWatson(name="ask",method="post",action="/question")
+        input#inputDocId(type="text", placeholder="Question", name="query")
+        input#inputDocId(type="text", placeholder="SyncTimeout", name="timeout")
+        button#btnSubmit(type="submit") submit
+    p
+    p

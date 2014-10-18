@@ -1,0 +1,21 @@
+//
+ * This Bluemix app uses Watson's Question and Answer  service and was created using NodeExpress
+ * Designed and developed by: Tinniam V Ganesh
+ * Date: 18 Oct 2014
+ * File: index.jade
+ * 
+ */
+extends layout
+
+block content
+  <h1 style="color:mediumpurple"> A Bluemix app using Watson QAAPI </style> </h1>
+  <h2 style="color:olivedrab">  Hello, Dr. Watson at your service. Ask away! </style></h2>
+  ol
+    li 
+      a(href='/question') Ask a simple synchronous query of  Watson
+    li
+      a(href='/evidence') Ask Watson for responses based on evidence provided
+    li
+      a(href='/items') Ask Watson for number of responses to question
+    li
+      a(href='/format') Ask Watson and get a formatted response

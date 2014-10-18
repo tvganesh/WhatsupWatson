@@ -1,0 +1,77 @@
+//
+ * This Bluemix app uses Watson's Question and Answer  service and was created using NodeExpress
+ * Designed and developed by: Tinniam V Ganesh
+ * Date: 18 Oct 2014
+ * 
+ */
+
+extends layout
+
+block content
+  a(href='/') Home
+  <h1 style="color:blue"> Watson's Answer with number of items in response </h1>
+
+  
+  <h2 style="color:blueviolet">  Question Details </style> </h2>  
+  if results.question.qclasslist
+    for result in results.question.qclasslist
+      p <font color="blueviolet">  Value   = <font color="black "> #{result.value} </font> 
+  if results.question.focuslist
+    p <font color="blueviolet">  Focuslist  </font> = <font color="black "> #{results.question.focuslist[0].value} </font>
+  if latlist
+    p <font color="blueviolet">  Latlist  </font> = <font color="black "> #{results.question.latlist[0].value} </font>
+
+
+  <h2 style="color:darkblue">  Evidence List </style></h2>
+  if results.question.evidencelist 
+    for result in results.question.evidencelist
+      p <font color="darkblue"> Value </font> = <font color="black "> #{result.value} </font>
+      p <font color="darkblue"> Text </font> = <font color="black ">  #{result.text} </font>
+      p <font color="darkblue"> Title </font>=<font color="black ">  #{result.title} </font>
+      p <font color="darkblue"> Copyright</font> =<font color="black ">  #{result.copyright} </font>
+      p <font color="darkblue"> TermsOfUse</font> =<font color="black ">  #{result.termsOfUse} </font>
+      p
+      p
+
+  
+  <h2 style="color:darkcyan">  Synonym List </style></h2>
+  if results.question.synonymList
+    for result in results.question.synonymList
+     p <font color="darkcyan">  PartsOfSpeech </font> =<font color="black ">  #{result.partOfSpeech} </font>
+     p <font color="darkcyan">  Value </font> =<font color="black ">  #{result.value} </font>
+     p <font color="darkcyan">  Lemma </font> =<font color="black ">  #{result.lemma}</font>
+     p <font color="darkcyan">  name </font> =<font color="black ">  #{result.synSet[0].name}</font>
+     p <font color="darkcyan">  isChosen </font> =<font color="black ">  #{result.synSet[0].synonym[0].isChosen}</font>
+     p <font color="darkcyan">  value </font> =<font color="black ">  #{result.synSet[0].synonym[0].value}</font>
+     p <font color="darkcyan">  weight </font> =<font color="black ">  #{result.synSet[0].synonym[0].weight}</font>
+     p
+     p
+  
+  if results.question.items   
+    p <font color="darkcyan">  Items </font> =<font color="black ">  #{results.question.items}</font>
+  
+  if results.question.status
+    p <font color="darkcyan">  Status </font> =<font color="black ">  #{results.question.status}</font>
+  if results.question.id
+    p <font color="darkcyan">  Id </font>=<font color="black ">  #{results.question.id}</font>
+  if results.question.questionText
+    p <font color="darkcyan">  QuestionText </font> =<font color="black ">  #{results.question.questionText}</font>
+  if results.question.evidenceRequest.items
+    p <font color="darkcyan">  EvidenceRequestItems </font> =<font color="black ">  #{results.question.evidenceRequest.items}</font>
+
+  
+  <h2 style="color:navy"> Answers </style></h2>
+  if results.question.answers
+    for result in results.question.answers
+     p <font color="navy">  Id</font> =<font color="black ">  #{result.id}</font>
+     p <font color="navy">  Text</font> =<font color="black ">  #{result.text}</font>
+     p <font color="navy">  Pipeline</font> =<font color="black ">  #{result.pipeline}</font>
+     p <font color="navy">  Confidence</font> =<font color="black ">  #{result.confidence}</font>
+  p
+  p
+  <h2 style="color:dodgerblue"> Error Notifications </style></h2>
+  if results.question.errorNotifications
+    for result in results.question.errorNotifications
+      p <font color="dodgerblue">  ErrorNotifications</font> =<font color="black ">  #{result}</font>
+ 
+  a(href='/') Home

@@ -1,0 +1,24 @@
+//
+ * This Bluemix app uses Watson's Question and Answer  service and was created using NodeExpress
+ * Designed and developed by: Tinniam V Ganesh
+ * Date: 18 Oct 2014
+ * File: question.jade
+ */
+extends layout
+
+block content
+    h1= "Ask Watson a Question"
+    form#formAskWatson(name="ask",method="post",action="/simplesync")
+        input#inputDocId(type="text", placeholder="Question", name="query")
+        input#inputDocId(type="text", placeholder="Sync Timeout (secs)", name="timeout")
+        button#btnSubmit(type="submit") submit
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    p  <strong>Examples</strong>
+    p  Question: What causes a heart attack? Sync Timeout: 3
+    p  Question: Is AIDs contagious? Sync Timeout: 5
+    p  Question: How is carotid artery disease treated? Sync Timeout: 10
+    p  Question: Am I at risk of a heart attack? Sync Timeout:4

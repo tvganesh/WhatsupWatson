@@ -1,0 +1,25 @@
+//
+ * This Bluemix app uses Watson's Question and Answer  service and was created using NodeExpress
+ * Designed and developed by: Tinniam V Ganesh
+ * Date: 18 Oct 2014
+ * File: itemsreq.jade
+ * 
+ */
+extends layout
+
+block content
+    h1= "Ask Watson a question for  number answers"
+    form#formAskWatson(name="ask",method="post",action="/itemsreq")
+        input#inputDocId(type="text", placeholder="Question", name="query")
+        input#inputDocId(type="text", placeholder="Number of Items", name="items")
+        button#btnSubmit(type="submit") submit
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    p  <strong>Examples</strong>
+    p  Question: What is a stroke? Items: 4
+    p  Question: What is the treatment for Down's syndrome? Items 3
+    p  Question: How can we differentiate between Parkinsons diseases and Alzheimers disease? Items 2
+    p  Question: Am I suffering from depression? Items 3

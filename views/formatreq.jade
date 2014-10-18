@@ -1,0 +1,23 @@
+//
+ * This Bluemix app uses Watson's Question and Answer  service and was created using NodeExpress
+ * Designed and developed by: Tinniam V Ganesh
+ * Date: 18 Oct 2014
+ * File: formatreq.jade
+ * 
+ */
+extends layout
+
+block content
+    h1= "Ask Watson a question and get a formatted response"
+    form#formAskWatson(name="ask",method="post",action="/formatreq")
+        input#inputDocId(type="text", placeholder="Question", name="query")
+        button#btnSubmit(type="submit") submit
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    p  <strong>Examples</strong>
+    p  Question: What are the causes of meningitis? 
+    p  Question: How do I know if I am suffering from food poisoning? 
+    p  Question: What are the benefits of taking Omega-3 daily? 
