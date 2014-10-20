@@ -1,7 +1,7 @@
 /**
  * This Bluemix app uses Watson's Question and Answer  service and was created using NodeExpress
  * Designed and developed by: Tinniam V Ganesh
- * Date: 18 Oct 2014
+ * Date: 20 Oct 2014
  * File: itemsreq.js
  */
 var express = require('express');
@@ -16,23 +16,6 @@ exports.list = function(req, res) {
   var question = req.body.query;
   var items = req.body.items;
   console.log("Question:" + question + " Items:" + items);
-  
-  //Get the VCAP environment variables to connect Watson service to the Bluemix applicatio
- /* if (process.env.VCAP_SERVICES) {
-	   var VCAP_SERVICES = JSON.parse(process.env.VCAP_SERVICES);
-	   // retrieve the credential information from VCAP_SERVICES for Watson QAAPI
-	   var hostname   = VCAP_SERVICES["Watson QAAPI-0.1"][0].name;               
-	   var passwd = VCAP_SERVICES["Watson QAAPI-0.1"][0].credentials.password; 
-	   var userid = VCAP_SERVICES["Watson QAAPI-0.1"][0].credentials.userid; 
-       var watson_url = VCAP_SERVICES["Watson QAAPI-0.1"][0].credentials.url;
-       
-    // Set the required headers for posting the REST query to Watson
-       headers = {'Content-Type'  :'application/json',
-                  'X-synctimeout' : '10',
-                  'Authorization' : "Basic " + new Buffer(userid+":"+passwd).toString("base64")};
-             
-       
-       var parts = url.parse(watson_url);*/
        
 	   // create the request options to POST our question to Watson
 	   var options = {host: parts.hostname,

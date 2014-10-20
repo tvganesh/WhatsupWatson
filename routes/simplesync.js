@@ -1,7 +1,7 @@
 /**
  * This Bluemix app uses Watson's QAAPI as a service and was created using NodeExpress
  * Designed and developed by: Tinniam V Ganesh
- * Date: 18 Oct 2014
+ * Date: 20 Oct 2014
  * File: simplesync.js
  */
 var express = require('express');
@@ -39,6 +39,7 @@ exports.list = function(req, res) {
                  };
 	   
 	  var output="";
+	  
 	   // Create a request to POST to Watson
 	   var req = https.request(options, function(result) {
 		   result.setEncoding('utf-8');
@@ -46,8 +47,7 @@ exports.list = function(req, res) {
 		   // Retrieve and return the result back to the client  		  	   
 		   result.on("data", function(chunk) {     		  
 			   output += chunk;  
-			   //console.log("output=" + output);			   
-			   		  
+			  		   			   		  
 		   });
 		   
 		   result.on('end', function(chunk) {		  
@@ -69,7 +69,6 @@ exports.list = function(req, res) {
   
 	   // create the Question text to ask Watson  
 	   var question = {question : {questionText :query }};   
-	   //var evidence = {"evidenceRequest":{"items":1,"profile":"yes"}};
 	   console.log(query);
 	   console.log(JSON.stringify(question));
 	   
