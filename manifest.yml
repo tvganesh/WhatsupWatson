@@ -1,12 +1,11 @@
 
 applications:
-- host: WhatsupWatson
+- name: WhatsupWatson
   disk: 512M
-  name: whatsup
   command: node app.js
   path: .
   domain: mybluemix.net
-  host: whatsup-${random-word} #Unique-Hostname for app routing. 
-  mem: 512M
+  host: WhatsupWatson #Use Unique-Hostname for app routing. 
+  memory: 512M
   instances: 1
    

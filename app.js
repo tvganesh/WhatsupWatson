@@ -2,7 +2,7 @@
 /**
  * This Bluemix app uses Watson's Question and Answer  service and was created using NodeExpress
  * Designed and developed by: Tinniam V Ganesh
- * Date: 20 Oct 2014
+ * Date: 21 Oct 2014
  * File: app.js
  */
 
@@ -36,6 +36,7 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+
 //Get the VCAP environment variables to connect Watson service to the Bluemix application
  if (process.env.VCAP_SERVICES) {
 	   var VCAP_SERVICES = JSON.parse(process.env.VCAP_SERVICES);
@@ -44,6 +45,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 	   passwd = VCAP_SERVICES["question_and_answer"][0].credentials.password; 
 	   username = VCAP_SERVICES["question_and_answer"][0].credentials.username; 
        watson_url = VCAP_SERVICES["question_and_answer"][0].credentials.url;
+       
+       // Set the corpus to healthcare
        parts = url.parse(watson_url +'/v1/question/healthcare');
        
       console.log("********************************************");
