@@ -22,3 +22,5 @@ manifest.yml
 
 package.json
 This file is required by the Node.js environment. It specifies this Node.js project name, dependencies, and other configurations of your Node.js application.
+
+For details on this project and similar post please visit  my blog https://gigadom.wordpress.com/
